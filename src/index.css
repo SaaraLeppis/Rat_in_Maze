@@ -19,3 +19,31 @@ body {
   text-align: center;
   font-size: 2em;
 }
+.row-wrap {
+  display: inline-block;
+}
+
+/* = == CELL == = */
+
+.cell {
+  border: 2px solid var(--dk-orange);
+  border-radius: 8px;
+  background-color: white;
+  height: 4em;
+  width: 4em;
+}
+
+.free {
+  border: 2px solid var(--dk-orange);
+  border-radius: 8px;
+  background-color: white;
+  height: 4em;
+  width: 4em;
+}
+.not-free {
+  border: 2px solid var(--dk-orange);
+  border-radius: 8px;
+  height: 4em;
+  width: 4em;
+  background-color: black;
+}

@@ -1,17 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Cell from './Cell';
 
-class Row extends Component {
+function Row({ maze }) {
 
-    render() {
-        return (
-            <div>
-                <Cell fill="not-free" />
-                <Cell fill="cell" />
-                <Cell fill="free" />
-            </div>
-        );
-    }
+    return (
+        <div className='row'>
+            {maze.map((row, index) => {
+                return (
+                    <div className='row-wrap'>
+                        {row.map((cell, index) =>
+                            <Cell fill={cell === 0 ? "free" : 'not-free'} key={index} />)}
+                    </div>)
+            })}
+        </div>
+    )
 }
 
 export default Row;

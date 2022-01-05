@@ -19,8 +19,16 @@ body {
   text-align: center;
   font-size: 2em;
 }
+input {
+  width: 4em;
+}
+label {
+  height: 2em;
+}
 .row-wrap {
-  display: inline-block;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* = == CELL == = */
@@ -29,21 +37,21 @@ body {
   border: 2px solid var(--dk-orange);
   border-radius: 8px;
   background-color: white;
-  height: 4em;
-  width: 4em;
+  height: 3em;
+  width: 3em;
 }
 
 .free {
   border: 2px solid var(--dk-orange);
   border-radius: 8px;
   background-color: white;
-  height: 4em;
-  width: 4em;
+  height: 3em;
+  width: 3em;
 }
 .not-free {
   border: 2px solid var(--dk-orange);
   border-radius: 8px;
-  height: 4em;
-  width: 4em;
+  height: 3em;
+  width: 3em;
   background-color: black;
 }

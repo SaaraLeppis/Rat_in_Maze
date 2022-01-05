@@ -1,8 +1,10 @@
 import React from 'react';
 
 const Cell = (props) => {
+    console.log(props.fill);
+
     return (
-        <div className={props.fill}>
+        <div className={props.fill} >
         </div>
     );
 };

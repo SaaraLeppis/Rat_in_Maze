@@ -67,3 +67,12 @@ input {
   width: 3em;
   background-color: yellowgreen;
 }
+.rat {
+  border: 2px solid var(--dk-orange);
+  border-radius: 8px;
+  height: 3em;
+  width: 3em;
+  background-color: yellowgreen;
+  background-image: url("./assets/rat.png");
+  background-size: cover;
+}

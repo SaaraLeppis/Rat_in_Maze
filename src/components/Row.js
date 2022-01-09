@@ -9,8 +9,11 @@ function Row({ maze }) {
             {maze.map((row, index) => {
                 return (
                     <div className='row-wrap'>
-                        {row.map((cell, index) =>
-                            <Cell fill={cell === 1 ? "free" : cell === 2 ? "green" : 'not-free'} key={index} />)}
+                        {row.map((cell, subindex) =>
+                            <Cell fill={cell === 1 ? "free" :
+                                cell === 2 ? "green" :
+                                    cell === 3 ? "rat" :
+                                        'not-free'} key={index * Math.random()} />)}
                     </div>)
             })}
         </div>

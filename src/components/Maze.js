@@ -6,8 +6,7 @@ const { solveMaze } = require('./solve.js');
 class Maze extends Component {
     state = {
         ratkaise: false,
-        maze: [
-        ],
+        maze: [],
         solutionMaze: [],
         n: 4,
     }
@@ -37,28 +36,31 @@ class Maze extends Component {
         }
         newMaze[0][0] = 1;
         newMaze[size - 1][size - 1] = 1;
-        console.log(newMaze, "newMaze");
         return newMaze
     }
     findPathHandler = (e) => {
         e.preventDefault();
-        this.setState({ solutionMaze: (solveMaze(this.state.maze)) })
+        let solved = (solveMaze(this.state.maze))
+        solved[0][0] = 3;
+        this.setState({ solutionMaze: solved })
+
         this.setState({ ratkaise: true })
     }
 
     render() {
         return (
             <div>
-                <input type="value" onChange={this.mazeSizeHandler}></input>
+                <input type="number" min="4" onChange={this.mazeSizeHandler}></input>
                 <button onClick={this.generateMazeHandler}>Generate Maze</button>
                 <button onClick={this.findPathHandler}>Find path</button>
 
-                {this.state.ratkaise ?
-                    <Row key={1 * Math.random()} maze={this.state.solutionMaze} /> :
-                    <Row key={2 * Math.random()} maze={this.state.maze} />
+                {
+                    this.state.ratkaise ?
+                        <Row key={1 * Math.random()} maze={this.state.solutionMaze} /> :
+                        <Row key={2 * Math.random()} maze={this.state.maze} />
                 }
 
-            </div>
+            </div >
         );
     }
 }

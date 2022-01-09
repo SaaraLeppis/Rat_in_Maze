@@ -19,12 +19,17 @@ body {
   text-align: center;
   font-size: 2em;
 }
+input,
+label,
+button {
+  height: 2rem;
+  margin: 1rem;
+  padding: 0.4em;
+}
 input {
   width: 4em;
 }
-label {
-  height: 2em;
-}
+
 .row-wrap {
   display: flex;
   flex-wrap: wrap;
@@ -54,4 +59,11 @@ label {
   height: 3em;
   width: 3em;
   background-color: black;
+}
+.green {
+  border: 2px solid var(--dk-orange);
+  border-radius: 8px;
+  height: 3em;
+  width: 3em;
+  background-color: yellowgreen;
 }

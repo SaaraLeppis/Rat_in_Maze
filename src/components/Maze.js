@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import Row from './Row';
 
+const { solveMaze } = require('./solve.js');
+
 class Maze extends Component {
     state = {
+        ratkaise: false,
         maze: [
         ],
+        solutionMaze: [],
         n: 4,
     }
     mazeSizeHandler = (e) => {
@@ -13,11 +17,11 @@ class Maze extends Component {
     }
     generateMazeHandler = (e) => {
         e.preventDefault();
-        console.log('hepp');
+        this.setState({ ratkaise: false })
         this.setState({ maze: this.generateMaze(this.state.n) });
     }
     weightedNumber = () => {
-        const numbers = [0, 0, 0, 0, 1, 1]
+        const numbers = [0, 0, 1, 1, 1, 1]
         return numbers[Math.floor(Math.random() * numbers.length)]
     }
     generateMaze = (size) => {
@@ -26,16 +30,20 @@ class Maze extends Component {
         for (let i = 0; i < size; i++) {
             let row = [];
             for (let j = 0; j < size; j++) {
-                let value = Math.floor(Math.random() * 2);
+                let value = this.weightedNumber();
                 row.push(value);
             }
             newMaze.push(row);
-            console.log("row", row)
         }
-        newMaze[0][0] = 0;
-        newMaze[size - 1][size - 1] = 0;
+        newMaze[0][0] = 1;
+        newMaze[size - 1][size - 1] = 1;
         console.log(newMaze, "newMaze");
         return newMaze
+    }
+    findPathHandler = (e) => {
+        e.preventDefault();
+        this.setState({ solutionMaze: (solveMaze(this.state.maze)) })
+        this.setState({ ratkaise: true })
     }
 
     render() {
@@ -43,7 +51,13 @@ class Maze extends Component {
             <div>
                 <input type="value" onChange={this.mazeSizeHandler}></input>
                 <button onClick={this.generateMazeHandler}>Generate Maze</button>
-                <Row maze={this.state.maze} />
+                <button onClick={this.findPathHandler}>Find path</button>
+
+                {this.state.ratkaise ?
+                    <Row key={1 * Math.random()} maze={this.state.solutionMaze} /> :
+                    <Row key={2 * Math.random()} maze={this.state.maze} />
+                }
+
             </div>
         );
     }

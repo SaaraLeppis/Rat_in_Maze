@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Footer from './Footer';
 import Row from './Row';
 
 const { solveMaze } = require('./solve.js');
@@ -48,7 +47,6 @@ class Maze extends Component {
         let solved = (solveMaze(this.state.maze))
         if (solved.length > 0) {
             solved[0][0] = 3;
-            console.log("solve", solved);
             this.setState({ solutionMaze: solved })
             this.setState({ solve: true })
         } else {
@@ -73,9 +71,9 @@ class Maze extends Component {
 
 
                 {
-                    this.state.ratkaise ?
-                        <Row key={1 * Math.random()} maze={this.state.solutionMaze} /> :
-                        <Row key={2 * Math.random()} maze={this.state.maze} />
+                    this.state.solve ?
+                        <Row maze={this.state.solutionMaze} /> :
+                        <Row maze={this.state.maze} />
                 }
 
             </div >

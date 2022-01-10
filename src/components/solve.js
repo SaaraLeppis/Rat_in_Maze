@@ -1,10 +1,12 @@
-'use strict';
+let N;
 
-// atrribute is maze to be solved
-// using function 
+/* atrribute for function  is maze to be solved
+   function solves the Maze by Bactracking: uses solveMazeUtil-function. If path found returns solved maze, otherwise empty list will be returned*/
 function solveMaze(maze) {
+
+    N = maze.length; // maze size
+
     if (solveMazeUtil(maze, 0, 0) === false) {
-        console.log("Solution doesn't exist");
         return [];
     }
     return maze;
@@ -15,22 +17,18 @@ const isSafe = (maze, row, col) => {
     return (row >= 0 && row < maze.length && col >= 0 && col < maze.length && maze[row][col] === 1)
 }
 
-// käy läpi "ruudukko
-// lähtöruutu 0,0 
+// recursive function to go through the maze (r = row, c = column)
 function solveMazeUtil(maze, r, c) {
-    // jos vikassa solussa => true
-    console.log("here");
+    // if last cell => true
     if (r === maze.length - 1 && c === maze.length - 1) {
         maze[r][c] = 2;
         return true;
-
     }
     if (isSafe(maze, r, c)) {
         // if sell visited already (set to value 2)
         if (maze[r][c] === 2)
             return false;
-
-        maze[r][c] = 2  // muussa tapauksessa muuta 0 taulukkoon 1
+        maze[r][c] = 2
         // move in x-diercetion => to nect column
         if (solveMazeUtil(maze, r, c + 1))
             return true;
@@ -42,11 +40,9 @@ function solveMazeUtil(maze, r, c) {
         // => to previous column
         if (solveMazeUtil(maze, r, c - 1))
             return true;
-        //return 1 to original maze to show free sell (as in original) in final solution 
-        maze[r][c] = 1
+
+        maze[r][c] = 1//return 1 to original maze so that it shows free sell (as in original) in final solution 
     }
     return false;
-
-
 }
 module.exports = { solveMaze };

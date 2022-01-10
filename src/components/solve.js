@@ -14,13 +14,13 @@ function solveMaze(maze) {
 
 // if cell is free (1) and not out of bounds
 const isSafe = (maze, row, col) => {
-    return (row >= 0 && row < maze.length && col >= 0 && col < maze.length && maze[row][col] === 1)
+    return (row >= 0 && row < N && col >= 0 && col < N && maze[row][col] === 1)
 }
 
 // recursive function to go through the maze (r = row, c = column)
 function solveMazeUtil(maze, r, c) {
     // if last cell => true
-    if (r === maze.length - 1 && c === maze.length - 1) {
+    if (r === N - 1 && c === N - 1) {
         maze[r][c] = 2;
         return true;
     }

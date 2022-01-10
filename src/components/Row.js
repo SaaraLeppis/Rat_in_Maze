@@ -1,4 +1,3 @@
-import { RANDOM } from 'mysql/lib/PoolSelector';
 import React from 'react';
 import Cell from './Cell';
 

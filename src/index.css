@@ -1,10 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Cardo&family=EB+Garamond&family=Luxurious+Roman&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 :root {
-  --background: #ffaf87;
+  --background: #f9c2a6;
   --mid-orange: #ff8e72;
   --dk-orange: #ed6a5e;
   --dark: #377771;
@@ -18,16 +20,63 @@ body {
   color: var(--dark);
   text-align: center;
   font-size: 2em;
+  font-family: "EB Garamond", serif;
+}
+header {
+  height: 5vh;
+  border-bottom: solid 1px var(--dark);
+}
+h1 {
+  font-family: "Cardo", serif;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  margin: 0.2em;
+}
+.maze-wrapper {
+  min-height: 90vh;
+}
+.explanation {
+  font-size: 0.6em;
+}
+p {
+  font-size: 1em;
+}
+.alert {
+  height: 1em;
+  margin: 0.2em;
+  color: var(--dk-orange);
+}
+.control {
+  justify-content: var(--dark) center;
 }
 input,
-label,
+.generate {
+  display: inline-block;
+}
+label {
+  font-size: 0.8em;
+  text-align: center;
+}
+input,
 button {
   height: 2rem;
   margin: 1rem;
   padding: 0.4em;
+  border-radius: 5px;
 }
 input {
   width: 4em;
+}
+button {
+  background-color: var(--bright);
+  color: black;
+  box-shadow: 0 0 5px var(--dark);
+}
+.find {
+  width: 12vw;
+}
+button:hover {
+  box-shadow: 2px 2px 5px black;
 }
 
 .row-wrap {
@@ -59,7 +108,7 @@ input {
 }
 
 .green {
-  background-color: yellowgreen;
+  background-color: var(--bright);
 }
 .rat {
   background-image: url("./assets/rat.png");
@@ -72,4 +121,13 @@ input {
   background-size: 2em;
   background-repeat: no-repeat;
   background-position: center;
+}
+footer {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 4vh;
+  position: static;
+  bottom: 0;
+  left: 0;
 }

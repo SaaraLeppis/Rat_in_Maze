@@ -1,11 +1,12 @@
 'use strict';
 
+// atrribute is maze to be solved
+// using function 
 function solveMaze(maze) {
     if (solveMazeUtil(maze, 0, 0) === false) {
         console.log("Solution doesn't exist");
         return [];
     }
-    // !== lisää ratkaisun tulostus
     return maze;
 }
 
@@ -14,8 +15,8 @@ const isSafe = (maze, row, col) => {
     return (row >= 0 && row < maze.length && col >= 0 && col < maze.length && maze[row][col] === 1)
 }
 
-// käy läpi ruudukko 
-// ruudukko/ lähtöruutu 0,0 
+// käy läpi "ruudukko
+// lähtöruutu 0,0 
 function solveMazeUtil(maze, r, c) {
     // jos vikassa solussa => true
     console.log("here");

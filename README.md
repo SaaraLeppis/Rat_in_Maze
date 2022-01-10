@@ -28,6 +28,11 @@ Related to studies of datastructures.
   npm start
 ```
 
+## Screenshots
+
+![Solution found example](src/assets/solution_found.png)
+![No solution found example](src/assets/no_solution.png)
+
 ## Learned and development points
 
     This was first project with React from scratch and it took long to get even the maze generated. I was happy to get all finally function, without just copying ready code.

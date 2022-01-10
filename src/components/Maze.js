@@ -60,6 +60,7 @@ class Maze extends Component {
         return (
             <div className='maze-wrapper'>
                 <p className='explanation'>Select Maze size (n x n), default is 4. Bigger mazes may not fit to screen, so preferably select value below 14. Click to genetrate new maze and check if Rat finds path to cheese by clicking 'Find path'.
+                    White cells are free, black ones blocked and green will show the found path.
                 </p>
                 <div className='control'>
                     <label>Maze size:</label>

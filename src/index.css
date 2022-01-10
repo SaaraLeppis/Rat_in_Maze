@@ -34,45 +34,42 @@ input {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 98wv;
 }
 
 /* = == CELL == = */
 
-.cell {
-  border: 2px solid var(--dk-orange);
-  border-radius: 8px;
-  background-color: white;
-  height: 3em;
-  width: 3em;
-}
-
-.free {
-  border: 2px solid var(--dk-orange);
-  border-radius: 8px;
-  background-color: white;
-  height: 3em;
-  width: 3em;
-}
-.not-free {
-  border: 2px solid var(--dk-orange);
-  border-radius: 8px;
-  height: 3em;
-  width: 3em;
-  background-color: black;
-}
-.green {
-  border: 2px solid var(--dk-orange);
-  border-radius: 8px;
-  height: 3em;
-  width: 3em;
-  background-color: yellowgreen;
-}
+.free,
+.not-free,
+.green,
+.cheese,
 .rat {
   border: 2px solid var(--dk-orange);
   border-radius: 8px;
+  background-color: white;
   height: 3em;
   width: 3em;
+}
+.free {
+  background-color: whitesmoke;
+}
+
+.not-free {
+  background-color: black;
+}
+
+.green {
   background-color: yellowgreen;
+}
+.rat {
   background-image: url("./assets/rat.png");
-  background-size: cover;
+  background-size: 2em;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.cheese {
+  background-image: url("./assets/cheese.png");
+  background-size: 2em;
+  background-repeat: no-repeat;
+  background-position: center;
 }
